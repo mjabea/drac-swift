@@ -15,6 +15,7 @@
 		1FAAD9D61A5F5E73001D9924 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FAAD9D51A5F5E73001D9924 /* Images.xcassets */; };
 		1FAAD9D91A5F5E73001D9924 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1FAAD9D71A5F5E73001D9924 /* LaunchScreen.xib */; };
 		1FAAD9E51A5F5E73001D9924 /* DracTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FAAD9E41A5F5E73001D9924 /* DracTests.swift */; };
+		1FAAD9F11A5F6E1D001D9924 /* suits-default.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 1FAAD9F01A5F6E1D001D9924 /* suits-default.atlas */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		1FAAD9DE1A5F5E73001D9924 /* DracTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DracTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FAAD9E31A5F5E73001D9924 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1FAAD9E41A5F5E73001D9924 /* DracTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DracTests.swift; sourceTree = "<group>"; };
+		1FAAD9F01A5F6E1D001D9924 /* suits-default.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = "suits-default.atlas"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 				1FAAD9D21A5F5E73001D9924 /* Main.storyboard */,
 				1FAAD9D51A5F5E73001D9924 /* Images.xcassets */,
 				1FAAD9D71A5F5E73001D9924 /* LaunchScreen.xib */,
+				1FAAD9F01A5F6E1D001D9924 /* suits-default.atlas */,
 				1FAAD9C81A5F5E73001D9924 /* Supporting Files */,
 			);
 			path = Drac;
@@ -199,6 +202,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1FAAD9D91A5F5E73001D9924 /* LaunchScreen.xib in Resources */,
+				1FAAD9F11A5F6E1D001D9924 /* suits-default.atlas in Resources */,
 				1FAAD9D61A5F5E73001D9924 /* Images.xcassets in Resources */,
 				1FAAD9CD1A5F5E73001D9924 /* GameScene.sks in Resources */,
 				1FAAD9D41A5F5E73001D9924 /* Main.storyboard in Resources */,
