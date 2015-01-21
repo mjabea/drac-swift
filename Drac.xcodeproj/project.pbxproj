@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F498A091A6F3D0200C53566 /* ranks-default.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 1F498A081A6F3D0200C53566 /* ranks-default.atlas */; };
 		1FAAD9CB1A5F5E73001D9924 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FAAD9CA1A5F5E73001D9924 /* AppDelegate.swift */; };
 		1FAAD9CD1A5F5E73001D9924 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 1FAAD9CC1A5F5E73001D9924 /* GameScene.sks */; };
 		1FAAD9CF1A5F5E73001D9924 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FAAD9CE1A5F5E73001D9924 /* GameScene.swift */; };
@@ -29,6 +30,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1F498A081A6F3D0200C53566 /* ranks-default.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = "ranks-default.atlas"; sourceTree = "<group>"; };
 		1FAAD9C51A5F5E73001D9924 /* Drac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Drac.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FAAD9C91A5F5E73001D9924 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1FAAD9CA1A5F5E73001D9924 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 				1FAAD9D21A5F5E73001D9924 /* Main.storyboard */,
 				1FAAD9D51A5F5E73001D9924 /* Images.xcassets */,
 				1FAAD9D71A5F5E73001D9924 /* LaunchScreen.xib */,
+				1F498A081A6F3D0200C53566 /* ranks-default.atlas */,
 				1FAAD9F01A5F6E1D001D9924 /* suits-default.atlas */,
 				1FAAD9C81A5F5E73001D9924 /* Supporting Files */,
 			);
@@ -202,6 +205,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1FAAD9D91A5F5E73001D9924 /* LaunchScreen.xib in Resources */,
+				1F498A091A6F3D0200C53566 /* ranks-default.atlas in Resources */,
 				1FAAD9F11A5F6E1D001D9924 /* suits-default.atlas in Resources */,
 				1FAAD9D61A5F5E73001D9924 /* Images.xcassets in Resources */,
 				1FAAD9CD1A5F5E73001D9924 /* GameScene.sks in Resources */,
@@ -417,6 +421,7 @@
 				1FAAD9EA1A5F5E73001D9924 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1FAAD9EB1A5F5E73001D9924 /* Build configuration list for PBXNativeTarget "DracTests" */ = {
 			isa = XCConfigurationList;
@@ -425,6 +430,7 @@
 				1FAAD9ED1A5F5E73001D9924 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
