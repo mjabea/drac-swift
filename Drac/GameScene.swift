@@ -19,22 +19,9 @@ class GameScene: SKScene {
         for touch: AnyObject in touches {
             let location = touch.locationInNode(self)
             
-            let card = SKSpriteNode(color: SKColor.whiteColor(), size: CGSize(width: 49, height: 70))
-            let suit = SKSpriteNode(imageNamed:"heart")
-            let rank = SKSpriteNode(imageNamed:"king-red")
-
+            let card = Card()
             card.position = location
-            
-            let qWidth = card.frame.width / 4
-            let qHeight = card.frame.height / 4
-            
-            suit.position = CGPoint(x:qWidth, y:qHeight);
-            rank.position = CGPoint(x:-qWidth, y:qHeight);
-            
             self.addChild(card)
-            card.addChild(suit)
-            card.addChild(rank)
-
         }
     }
    
