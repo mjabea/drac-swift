@@ -15,9 +15,6 @@ class GameScene: SKScene {
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         /* Called when a touch begins */
-    }
-    
-    override func touchesMoved(touches: NSSet, withEvent event: UIEvent) {
         for touch: AnyObject in touches {
             let location = touch.locationInNode(self)
             
@@ -25,6 +22,9 @@ class GameScene: SKScene {
             card.position = location
             self.addChild(card)
         }
+    }
+    
+    override func touchesMoved(touches: NSSet, withEvent event: UIEvent) {
     }
    
     override func update(currentTime: CFTimeInterval) {
