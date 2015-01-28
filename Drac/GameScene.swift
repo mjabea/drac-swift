@@ -9,7 +9,7 @@
 import SpriteKit
 
 class GameScene: SKScene {
-    var movingCard:Card? = nil
+    var movingCard:SKNode? = nil
     var origPosition = CGPoint()
     var offset = CGPoint()
     var topMost = CGFloat(1.0)
@@ -36,11 +36,22 @@ class GameScene: SKScene {
                 topMost += 1.0
             }
             
-            if self.nodeAtPoint(location) is Card {
-                movingCard = self.nodeAtPoint(location) as? Card
+            let node = self.nodeAtPoint(location)
+            
+            if  node.isKindOfClass(Card) {
+                if let p = node.parent {
+                    if p.isKindOfClass(SKNode) {
+                        if p.isEqual(self) {
+                            movingCard = node
+                        } else {
+                            movingCard = p
+                        }
+                    }
+                }
+                
                 startMove()
-            } else if let p = self.nodeAtPoint(location).parent {
-                if p is Card {
+            } else if let p = node.parent {
+                if p.isKindOfClass(Card) {
                     movingCard = p as? Card
                     startMove()
                 }
@@ -58,18 +69,54 @@ class GameScene: SKScene {
     override func touchesEnded(touches: NSSet, withEvent event: UIEvent) {
         if let mc = movingCard {
             
-            let move = SKAction.moveTo(origPosition, duration: 0.15)
-            mc.runAction(move)
+            var targetPosition = origPosition
+            
+            // find the nodes that overlapped
+            var intersections:[Card] = []
+            for card in self.children {
+                if card.isEqual(mc) {
+                    continue
+                }
+                
+                if card.intersectsNode(mc) {
+                    intersections.append(card as Card)
+                }
+            }
+            
+            // find which one has the most overlap
+            var highestOverlap:Card? = nil
+            if intersections.count > 0 {
+                highestOverlap = intersections[0]
+                for intersection in intersections {
+                    var overlap = CGRectUnion(mc.frame, intersection.frame)
+                    if overlap.size.width * overlap.size.height < (highestOverlap?.size.width)! * (highestOverlap?.size.height)! {
+                        highestOverlap = intersection
+                    }
+                }
+                
+                targetPosition = (highestOverlap?.position)!
+                targetPosition.x += 10
+            }
+            
+            // add the moving card to the overlapped card as a child
+            func transfer() {
+                if let ho = highestOverlap {
+                    mc.removeFromParent()
+                    ho.removeFromParent()
+                    let container = SKNode()
+                    container.addChild(ho)
+                    container.addChild(mc)
+                    self.addChild(container)
+                }
+            }
+            
+            let move = SKAction.moveTo(targetPosition, duration: 0.15)
+            mc.runAction(move, completion: transfer)
             movingCard = nil
         }
     }
     
     override func touchesCancelled(touches: NSSet!, withEvent event: UIEvent!) {
-        if let mc = movingCard {
-            let move = SKAction.moveTo(origPosition, duration: 0.5)
-            mc.runAction(move)
-            movingCard = nil
-        }
     }
    
     override func update(currentTime: CFTimeInterval) {
